@@ -336,13 +336,13 @@ export function ExperiencePreview() {
         />
       </div>
 
-      <div className="no-scrollbar mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 md:gap-6 md:px-8 lg:justify-center lg:overflow-visible lg:px-0">
+      <div className="no-scrollbar mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-6 md:gap-6 md:px-8 lg:justify-center lg:px-8">
         {previewSlides.map((s, i) => (
           <Reveal
             key={s.label}
             variant="scale"
             delay={i * 70}
-            className="w-[62vw] shrink-0 snap-center sm:w-[42vw] md:w-[26vw] lg:w-[11.5rem]"
+            className="w-[62vw] shrink-0 snap-center sm:w-[42vw] md:w-[26vw] lg:w-[10.5rem] xl:w-[11.5rem]"
           >
             <figure
               className="group"
