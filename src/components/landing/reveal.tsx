@@ -36,7 +36,9 @@ export function Reveal({
       return;
     }
     const io = new IntersectionObserver(
-      ([entry]) => {
+      (entries) => {
+        const entry = entries[0];
+        if (!entry) return;
         if (entry.isIntersecting) {
           setVisible(true);
           if (once) io.disconnect();
@@ -72,7 +74,9 @@ export function useInView<T extends HTMLElement>(threshold = 0.3) {
       return;
     }
     const io = new IntersectionObserver(
-      ([e]) => {
+      (entries) => {
+        const e = entries[0];
+        if (!e) return;
         if (e.isIntersecting) {
           setInView(true);
           io.disconnect();
