@@ -151,6 +151,34 @@
   border: 1px solid var(--color-border);
 }
 
+/* Matcha aura surfaces — light green card with soft green glow */
+@utility card-matcha {
+  background:
+    radial-gradient(120% 90% at 20% 0%, oklch(0.88 0.08 132 / 0.55), transparent 60%),
+    linear-gradient(160deg, oklch(0.955 0.04 130), oklch(0.925 0.055 130));
+  border: 1px solid oklch(0.80 0.08 130);
+  box-shadow:
+    inset 0 1px 0 oklch(0.99 0.02 125 / 0.7),
+    0 18px 44px -22px oklch(0.50 0.10 137 / 0.38);
+}
+
+@utility aura-matcha {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: radial-gradient(60% 60% at 50% 0%, oklch(0.80 0.11 133 / 0.35), transparent 70%);
+    pointer-events: none;
+  }
+}
+
+@utility text-matcha-deep {
+  color: oklch(0.345 0.085 140);
+}
+
 @utility no-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
