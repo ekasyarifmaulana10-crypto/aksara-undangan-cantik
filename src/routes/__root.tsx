@@ -84,7 +84,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Undangan digital cantik dengan ratusan pilihan tema, fitur lengkap, dan harga mulai Rp15.000.",
       },
       { name: "author", content: "AksaraCinta" },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { name: "theme-color", content: "#F1F4E6" },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "AksaraCinta" },
+      { property: "og:locale", content: "id_ID" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
@@ -100,6 +104,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "AksaraCinta",
+          url: "https://aksara-undangan-cantik.lovable.app",
+          description:
+            "Marketplace undangan digital dengan ratusan tema, unlimited nama tamu, mulai Rp15.000.",
+        }),
+      },
+    ],
   }),
 
   shellComponent: RootShell,
@@ -110,7 +127,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="id">
       <head>
         <HeadContent />
       </head>

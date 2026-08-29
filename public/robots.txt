@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://aksara-undangan-cantik.lovable.app/sitemap.xml
