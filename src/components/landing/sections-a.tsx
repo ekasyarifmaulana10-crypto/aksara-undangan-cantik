@@ -251,7 +251,7 @@ export function GuestUnlimited() {
               ))}
             </ul>
 
-            <div className="mt-2 rounded-2xl bg-secondary/60 px-4 py-3 text-[0.72rem] text-muted-foreground">
+            <div className="mt-2 rounded-2xl card-matcha px-4 py-3 text-[0.72rem] text-muted-foreground">
               Kuota nama tamu: <span className="font-medium text-primary">tidak terbatas</span>
             </div>
           </div>
@@ -409,7 +409,7 @@ export function ResponsiveDevices() {
         </Reveal>
 
         <Reveal variant="scale" delay={120}>
-          <div className="overflow-hidden rounded-[1.75rem] border border-border bg-card shadow-lift">
+          <div className="overflow-hidden rounded-[1.75rem] card-matcha shadow-lift">
             <img
               src={devicesShowcase}
               width={1408}

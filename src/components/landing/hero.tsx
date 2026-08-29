@@ -117,7 +117,7 @@ export function Hero() {
               fetchPriority="high"
             />
           </div>
-          <div className="absolute -bottom-5 left-4 flex items-center gap-3 rounded-2xl border border-border bg-card px-4 py-3 shadow-soft sm:left-8">
+          <div className="absolute -bottom-5 left-4 flex items-center gap-3 rounded-2xl card-matcha px-4 py-3 shadow-soft sm:left-8">
             <span className="font-serif text-2xl text-primary">10+</span>
             <span className="text-[0.7rem] leading-tight tracking-[0.12em] text-muted-foreground uppercase">
               Tema

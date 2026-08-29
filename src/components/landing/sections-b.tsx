@@ -138,7 +138,7 @@ export function WhyUs() {
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {reasons.map((r, i) => (
             <Reveal key={r.title} delay={(i % 3) * 110} className="min-w-0">
-              <div className="flex h-full items-start gap-4 rounded-3xl border border-border bg-card p-6">
+              <div className="flex h-full items-start gap-4 rounded-3xl card-matcha p-6">
                 <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl border border-sage/30 text-primary">
                   <r.Icon className="h-5 w-5" />
                 </span>
@@ -211,7 +211,7 @@ export function Pricing() {
                 className={cn(
                   "relative flex h-full flex-col rounded-[1.75rem] border p-7 transition-all duration-500 hover:-translate-y-1",
                   p.featured
-                    ? "border-primary/35 bg-card shadow-lift lg:scale-[1.03]"
+                    ? "card-matcha shadow-lift ring-1 ring-matcha/60 lg:scale-[1.03]"
                     : "border-border bg-card/70",
                 )}
               >
@@ -300,7 +300,7 @@ export function Comparison() {
                   {c.aspect}
                 </p>
                 <div className="mt-3 grid grid-cols-2 gap-3">
-                  <div className="rounded-xl border border-sage/30 bg-card px-3 py-2.5">
+                  <div className="rounded-xl card-matcha px-3 py-2.5">
                     <p className="text-[0.62rem] tracking-[0.14em] text-sage uppercase">AksaraCinta</p>
                     <p className="mt-1 text-[0.85rem] font-medium text-primary">{c.us}</p>
                   </div>
@@ -352,7 +352,7 @@ export function Testimonials() {
         {testimonials.map((t) => (
           <article
             key={t.name}
-            className="w-[78vw] shrink-0 snap-center rounded-3xl border border-border bg-card p-6"
+            className="w-[78vw] shrink-0 snap-center rounded-3xl card-matcha p-6"
           >
             <TestimonialBody {...t} />
           </article>
@@ -362,7 +362,7 @@ export function Testimonials() {
       <div className="container-page mt-12 hidden gap-5 md:grid md:grid-cols-2 lg:grid-cols-3">
         {testimonials.map((t, i) => (
           <Reveal key={t.name} delay={(i % 3) * 110} className="min-w-0">
-            <article className="flex h-full flex-col rounded-3xl border border-border bg-card p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-soft">
+            <article className="flex h-full flex-col rounded-3xl card-matcha p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-soft">
               <TestimonialBody {...t} />
             </article>
           </Reveal>
