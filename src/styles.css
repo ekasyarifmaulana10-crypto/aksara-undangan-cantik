@@ -50,21 +50,21 @@
   --color-gold: var(--gold);
   --color-matcha: var(--matcha);
 
-  --shadow-soft: 0 1px 2px oklch(0.30 0.05 138 / 0.06), 0 12px 32px -18px oklch(0.30 0.05 138 / 0.30);
-  --shadow-lift: 0 2px 6px oklch(0.30 0.05 138 / 0.08), 0 28px 60px -28px oklch(0.30 0.05 138 / 0.36);
+  --shadow-soft: 0 1px 2px oklch(0.32 0.07 138 / 0.07), 0 12px 32px -18px oklch(0.32 0.07 138 / 0.32);
+  --shadow-lift: 0 2px 6px oklch(0.32 0.07 138 / 0.10), 0 28px 60px -28px oklch(0.32 0.07 138 / 0.40);
 }
 
 :root {
   --radius: 1.125rem;
 
-  /* Matcha-forward palette: warm ivory with a clear green cast */
-  --ivory: oklch(0.958 0.028 126);
-  --warmwhite: oklch(0.988 0.016 124);
-  --sage: oklch(0.585 0.082 136);
-  --beige: oklch(0.893 0.052 124);
-  --charcoal: oklch(0.268 0.018 134);
+  /* Matcha accent palette: neutral ivory base, matcha lives on cards & type */
+  --ivory: oklch(0.972 0.008 110);
+  --warmwhite: oklch(0.992 0.004 105);
+  --sage: oklch(0.575 0.095 138);
+  --beige: oklch(0.916 0.045 128);
+  --charcoal: oklch(0.252 0.022 136);
   --gold: oklch(0.66 0.068 72);
-  --matcha: oklch(0.72 0.105 132);
+  --matcha: oklch(0.745 0.125 133);
 
   --background: var(--ivory);
   --foreground: var(--charcoal);
@@ -72,18 +72,18 @@
   --card-foreground: var(--charcoal);
   --popover: var(--warmwhite);
   --popover-foreground: var(--charcoal);
-  --primary: oklch(0.335 0.068 141);
-  --primary-foreground: oklch(0.98 0.014 120);
-  --secondary: var(--beige);
-  --secondary-foreground: var(--charcoal);
-  --muted: oklch(0.935 0.035 126);
-  --muted-foreground: oklch(0.492 0.031 134);
+  --primary: oklch(0.325 0.078 141);
+  --primary-foreground: oklch(0.982 0.014 122);
+  --secondary: oklch(0.912 0.058 130);
+  --secondary-foreground: oklch(0.30 0.06 140);
+  --muted: oklch(0.942 0.028 128);
+  --muted-foreground: oklch(0.442 0.048 138);
   --accent: var(--sage);
-  --accent-foreground: oklch(0.98 0.014 120);
+  --accent-foreground: oklch(0.982 0.014 122);
   --destructive: oklch(0.577 0.18 27);
-  --destructive-foreground: oklch(0.98 0.014 120);
-  --border: oklch(0.872 0.043 127);
-  --input: oklch(0.872 0.043 127);
+  --destructive-foreground: oklch(0.982 0.014 122);
+  --border: oklch(0.862 0.058 129);
+  --input: oklch(0.862 0.058 129);
   --ring: var(--sage);
 }
 
@@ -117,14 +117,14 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-sage);
+    outline: 3px solid oklch(0.70 0.14 133);
     outline-offset: 3px;
     border-radius: 4px;
   }
 
   ::selection {
-    background: oklch(0.309 0.038 137);
-    color: oklch(0.98 0.01 95);
+    background: oklch(0.40 0.09 140);
+    color: oklch(0.982 0.014 122);
   }
 }
 
@@ -149,6 +149,34 @@
 
 @utility hairline {
   border: 1px solid var(--color-border);
+}
+
+/* Matcha aura surfaces — light green card with soft green glow */
+@utility card-matcha {
+  background:
+    radial-gradient(120% 90% at 20% 0%, oklch(0.88 0.08 132 / 0.55), transparent 60%),
+    linear-gradient(160deg, oklch(0.955 0.04 130), oklch(0.925 0.055 130));
+  border: 1px solid oklch(0.80 0.08 130);
+  box-shadow:
+    inset 0 1px 0 oklch(0.99 0.02 125 / 0.7),
+    0 18px 44px -22px oklch(0.50 0.10 137 / 0.38);
+}
+
+@utility aura-matcha {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: radial-gradient(60% 60% at 50% 0%, oklch(0.80 0.11 133 / 0.35), transparent 70%);
+    pointer-events: none;
+  }
+}
+
+@utility text-matcha-deep {
+  color: oklch(0.345 0.085 140);
 }
 
 @utility no-scrollbar {
